@@ -1,0 +1,91 @@
+"""
+MAX_DEPTH = 7
+d = 0
+
+MINIMAXDECISION(state) returns an action (a)
+    foreach a in ACTION(S)
+        set.add(MIN_VALUE(RESULT(s,a))
+
+MIN_VALUE(state) returns utility (v)
+    d++
+    if CUTTOF_TEST(state) return EVAL(state)
+    if
+    v <- inf
+    v <- MIN(v, MAX_VALUE(Result(s,a)))
+    return v
+
+MAX_VALUE
+    d++
+    if CUTTOF_TEST() return EVAL(state)
+    v <- inf
+    v <- MAX(v, MIN_VALUE(Result(s,a)))
+    return v
+
+CHANCE_NODE(state)
+    d++
+    if CUTTOF_TEST() return EVAL(state)
+    sum = 0
+    expectiminimax = 0
+    foreach a in state
+        expectiminimax += MAX_VALUE(RESULT(s,r))*P(r)          (r a set of probabilities of getting a specific hand-strength).
+
+CUTTOFF_TEST(state)
+    if d == MAX_DEPTH || TERMINAL_TEST(state) (could be ennd of game aswell)
+        return true
+
+EVAL(state)
+    should determine heuristic based on two features: current hand-strength and the pot
+    what heuristic if depth is reached at chance node?
+    If chance node evaluate current hand against other possible hands one might get
+    bluffing and risk management?
+
+TERMINAL_TEST(state)
+    if rounds == 30 then end game, return true
+
+Chances for cards given hands
+    0.0015 (straight flushes)
+    0.024 (four of a kind)
+    0.14  (full houses)
+    0.20  (flushes)
+    0.39  (possible straights)
+    2.1   (three-of-a-kind)
+    4.75  (two pair)
+    42.26 (one pair)
+    50.12 (high card, nothing)
+
+Eg. having a hand that is very strong (straight flush) would make the evaluation through a stochastic node (druing draw phase extremely low).
+
+RESULT(s,a)
+    return GENERATE_STATE(s,a)
+
+GENERATE_STATE(s,a)
+
+
+state
+{
+    name
+    applicable_actions (import clientBase.py) ACTION_CALL eg..
+    strength_of_hand
+    current_pot
+
+    _maxmimumBet
+    _minimumAmountToRaiseTo
+    -playersCurrentBet
+    _playersRemainingChips
+
+
+    'Open'
+    'Call'
+    'Raise'
+
+    'Draw?' // chance node
+    'Game_Over' // Terminal state
+
+
+
+}
+
+
+
+
+"""
